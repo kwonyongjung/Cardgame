@@ -8,3 +8,13 @@ C:\Users\권용중\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Card
 C:\Users\권용중\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\CardGame.csproj.CoreCompileInputs.cache
 C:\Users\권용중\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\권용중\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\ATENTS\source\repos\카드게임\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\ATENTS\source\repos\카드게임\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\ATENTS\source\repos\카드게임\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\ATENTS\source\repos\카드게임\WindowsFormsApp1\obj\Debug\CardGame.csprojAssemblyReference.cache
+C:\Users\ATENTS\source\repos\카드게임\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\ATENTS\source\repos\카드게임\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\ATENTS\source\repos\카드게임\WindowsFormsApp1\obj\Debug\CardGame.csproj.GenerateResource.cache
+C:\Users\ATENTS\source\repos\카드게임\WindowsFormsApp1\obj\Debug\CardGame.csproj.CoreCompileInputs.cache
+C:\Users\ATENTS\source\repos\카드게임\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\ATENTS\source\repos\카드게임\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

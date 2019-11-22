@@ -64,10 +64,10 @@ namespace WindowsFormsApp1
                             }
                             else if (i == 22)
                             {
-                                p1hp -= 20;
+                                p2hp -= 20;
                                 t_damege = 0;
                                 c_damege = 0;
-                                p1hp_label.Text = "HP: " + p1hp;
+                                p2hp_label.Text = "HP: " + p2hp;
                                 current_damege.Text = c_damege + "";
                                 total_damage.Text = t_damege + "";
                                 turn++;
@@ -243,10 +243,10 @@ namespace WindowsFormsApp1
                             }
                             else if (i == 22)
                             {
-                                p1hp -= 20;
+                                p2hp -= 20;
                                 t_damege = 0;
                                 c_damege = 0;
-                                p1hp_label.Text = "HP: " + p1hp;
+                                p2hp_label.Text = "HP: " + p2hp;
                                 current_damege.Text = c_damege + "";
                                 total_damage.Text = t_damege + "";
                                 turn++;
@@ -421,10 +421,10 @@ namespace WindowsFormsApp1
                             }
                             else if (i == 22)
                             {
-                                p1hp -= 20;
+                                p2hp -= 20;
                                 t_damege = 0;
                                 c_damege = 0;
-                                p1hp_label.Text = "HP: " + p1hp;
+                                p2hp_label.Text = "HP: " + p2hp;
                                 current_damege.Text = c_damege + "";
                                 total_damage.Text = t_damege + "";
                                 turn++;
@@ -599,10 +599,10 @@ namespace WindowsFormsApp1
                             }
                             else if (i == 22)
                             {
-                                p1hp -= 20;
+                                p2hp -= 20;
                                 t_damege = 0;
                                 c_damege = 0;
-                                p1hp_label.Text = "HP: " + p1hp;
+                                p2hp_label.Text = "HP: " + p2hp;
                                 current_damege.Text = c_damege + "";
                                 total_damage.Text = t_damege + "";
                                 turn++;
@@ -777,10 +777,10 @@ namespace WindowsFormsApp1
                             }
                             else if (i == 22)
                             {
-                                p1hp -= 20;
+                                p2hp -= 20;
                                 t_damege = 0;
                                 c_damege = 0;
-                                p1hp_label.Text = "HP: " + p1hp;
+                                p2hp_label.Text = "HP: " + p2hp;
                                 current_damege.Text = c_damege + "";
                                 total_damage.Text = t_damege + "";
                                 turn++;
@@ -955,10 +955,10 @@ namespace WindowsFormsApp1
                             }
                             else if (i == 22)
                             {
-                                p1hp -= 20;
+                                p2hp -= 20;
                                 t_damege = 0;
                                 c_damege = 0;
-                                p1hp_label.Text = "HP: " + p1hp;
+                                p2hp_label.Text = "HP: " + p2hp;
                                 current_damege.Text = c_damege + "";
                                 total_damage.Text = t_damege + "";
                                 turn++;
@@ -1089,7 +1089,180 @@ namespace WindowsFormsApp1
 
         private void p2card1_Click(object sender, EventArgs e)
         {
+            Win();
+            if (turn == 1)
+            {
+                for (int i = 0; i < 25; i++)
+                {
+                    if (p2card1name.Text.Equals(create_card[i].get_name()))
+                    {
+                        p2card1.Visible = this.p2card1.Visible = true;
+                        p2card1name.Text = create_card[0].get_name();
+                        card.Visible = this.card.Visible = true;
+                        try
+                        {
+                            p2card1.Image = System.Drawing.Image.FromFile(create_card[0].get_image());
+                            card.Image = System.Drawing.Image.FromFile(create_card[i].get_image());
+                        }
+                        catch (Exception)
+                        {
 
+                        }
+                        if (i > 16 && i < 21)
+                        {
+                            c_damege = create_card[i].get_attak();
+                            p2hp -= t_damege;
+                            p2hp += c_damege;
+                            t_damege = 0;
+                            c_damege = 0;
+                            p2hp_label.Text = "HP: " + p2hp;
+                            current_damege.Text = c_damege + "";
+                            total_damage.Text = t_damege + "";
+                            turn--;
+
+                        }
+                        else if (i > 20)
+                        {
+                            if (i == 21)
+                            {
+                                t_damege = 0;
+                                c_damege = 0;
+                                current_damege.Text = c_damege + "";
+                                total_damage.Text = t_damege + "";
+                                turn--;
+                            }
+                            else if (i == 22)
+                            {
+                                p1hp -= 20;
+                                t_damege = 0;
+                                c_damege = 0;
+                                p1hp_label.Text = "HP: " + p1hp;
+                                current_damege.Text = c_damege + "";
+                                total_damage.Text = t_damege + "";
+                                turn--;
+                            }
+                            else if (i == 23)
+                            {
+                                p2hp -= t_damege;
+                                p1hp = p2hp;
+                                t_damege = 0;
+                                c_damege = 0;
+                                p1hp_label.Text = "HP: " + p1hp;
+                                p2hp_label.Text = "HP: " + p2hp;
+                                current_damege.Text = c_damege + "";
+                                total_damage.Text = t_damege + "";
+                                turn--;
+                            }
+                            else
+                            {
+                                p2hp -= t_damege;
+                                t_damege = 0;
+                                c_damege = 0;
+
+                                int num = 0;
+                                Random r = new Random();
+
+                                num = r.Next(1, 25);
+                                p1card1.Visible = this.p1card1.Visible = true;
+                                try
+                                {
+                                    p1card1.Image = System.Drawing.Image.FromFile(create_card[num].get_image());
+                                }
+                                catch (Exception)
+                                {
+
+                                }
+                                p1card1name.Text = create_card[num].get_name();
+                                num = r.Next(1, 25);
+                                p1card2.Visible = this.p1card2.Visible = true;
+                                try
+                                {
+                                    p1card2.Image = System.Drawing.Image.FromFile(create_card[num].get_image());
+                                }
+                                catch (Exception)
+                                {
+
+                                }
+                                p1card2name.Text = create_card[num].get_name();
+                                num = r.Next(1, 25);
+                                p1card3.Visible = this.p1card3.Visible = true;
+                                try
+                                {
+                                    p1card3.Image = System.Drawing.Image.FromFile(create_card[num].get_image());
+                                }
+                                catch (Exception)
+                                {
+
+                                }
+                                p1card3name.Text = create_card[num].get_name();
+                                num = r.Next(1, 25);
+                                p1card4.Visible = this.p1card4.Visible = true;
+                                try
+                                {
+                                    p1card4.Image = System.Drawing.Image.FromFile(create_card[num].get_image());
+                                }
+                                catch (Exception)
+                                {
+
+                                }
+                                p1card4name.Text = create_card[num].get_name();
+                                num = r.Next(1, 25);
+                                p1card5.Visible = this.p1card5.Visible = true;
+                                try
+                                {
+                                    p1card5.Image = System.Drawing.Image.FromFile(create_card[num].get_image());
+                                }
+                                catch (Exception)
+                                {
+
+                                }
+                                p1card5name.Text = create_card[num].get_name();
+                                num = r.Next(1, 25);
+                                p1card6.Visible = this.p1card6.Visible = true;
+                                try
+                                {
+                                    p1card6.Image = System.Drawing.Image.FromFile(create_card[num].get_image());
+                                }
+                                catch (Exception)
+                                {
+
+                                }
+                                p1card6name.Text = create_card[num].get_name();
+
+                                p2hp_label.Text = "HP:" + p2hp;
+                                current_damege.Text = c_damege + "";
+                                total_damage.Text = t_damege + "";
+                                turn--;
+                            }
+                        }
+                        else
+                        {
+                            if (c_damege >= create_card[i].get_attak())
+                            {
+                                p2hp -= t_damege;
+                                c_damege = create_card[i].get_attak();
+                                t_damege = create_card[i].get_attak();
+                                p2hp_label.Text = "HP: " + p2hp;
+                                current_damege.Text = c_damege + "";
+                                total_damage.Text = t_damege + "";
+                                turn--;
+                            }
+                            else
+                            {
+                                c_damege = create_card[i].get_attak();
+                                t_damege += c_damege;
+                                current_damege.Text = c_damege + "";
+                                total_damage.Text = t_damege + "";
+                                turn--;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("당신의 턴이 아닙니다.");
+            }
         }
 
         private void p2card2_Click(object sender, EventArgs e)
@@ -1138,10 +1311,10 @@ namespace WindowsFormsApp1
                             }
                             else if (i == 22)
                             {
-                                p2hp -= 20;
+                                p1hp -= 20;
                                 t_damege = 0;
                                 c_damege = 0;
-                                p2hp_label.Text = "HP: " + p2hp;
+                                p1hp_label.Text = "HP: " + p1hp;
                                 current_damege.Text = c_damege + "";
                                 total_damage.Text = t_damege + "";
                                 turn--;
@@ -1316,10 +1489,10 @@ namespace WindowsFormsApp1
                             }
                             else if (i == 22)
                             {
-                                p2hp -= 20;
+                                p1hp -= 20;
                                 t_damege = 0;
                                 c_damege = 0;
-                                p2hp_label.Text = "HP: " + p2hp;
+                                p1hp_label.Text = "HP: " + p1hp;
                                 current_damege.Text = c_damege + "";
                                 total_damage.Text = t_damege + "";
                                 turn--;
@@ -1494,10 +1667,10 @@ namespace WindowsFormsApp1
                             }
                             else if (i == 22)
                             {
-                                p2hp -= 20;
+                                p1hp -= 20;
                                 t_damege = 0;
                                 c_damege = 0;
-                                p2hp_label.Text = "HP: " + p2hp;
+                                p1hp_label.Text = "HP: " + p1hp;
                                 current_damege.Text = c_damege + "";
                                 total_damage.Text = t_damege + "";
                                 turn--;
@@ -1672,10 +1845,10 @@ namespace WindowsFormsApp1
                             }
                             else if (i == 22)
                             {
-                                p2hp -= 20;
+                                p1hp -= 20;
                                 t_damege = 0;
                                 c_damege = 0;
-                                p2hp_label.Text = "HP: " + p2hp;
+                                p1hp_label.Text = "HP: " + p1hp;
                                 current_damege.Text = c_damege + "";
                                 total_damage.Text = t_damege + "";
                                 turn--;
@@ -1850,10 +2023,10 @@ namespace WindowsFormsApp1
                             }
                             else if (i == 22)
                             {
-                                p2hp -= 20;
+                                p1hp -= 20;
                                 t_damege = 0;
                                 c_damege = 0;
-                                p2hp_label.Text = "HP: " + p2hp;
+                                p1hp_label.Text = "HP: " + p1hp;
                                 current_damege.Text = c_damege + "";
                                 total_damage.Text = t_damege + "";
                                 turn--;
